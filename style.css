@@ -7,6 +7,49 @@ body {
   color: #1C2B1E;
 }
 
+/* ── SCREEN READER ONLY ── */
+/* visually hidden but readable by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── SKIP LINK ── */
+/* hidden until focused by keyboard — first tab press reveals it */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: #C9A84C;
+  color: #1C2B1E;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── FOCUS STYLES ── */
+/* visible keyboard focus for all interactive elements */
+:focus-visible {
+  outline: 3px solid #C9A84C;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* ── CONTAINER ── */
 .container {
   max-width: 1200px;
@@ -19,18 +62,24 @@ body {
 .nav {
   background: #1C2B1E;
   padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo-mark {
@@ -61,10 +110,11 @@ body {
   border-radius: 24px;
   padding: 10px 18px;
   gap: 8px;
-  width: 320px;
+  flex: 1;
+  max-width: 380px;
 }
 
-.nav-center i { color: #7a9c7d; font-size: 16px; }
+.nav-center i { color: #7a9c7d; font-size: 16px; flex-shrink: 0; }
 
 .nav-center input {
   background: transparent;
@@ -81,6 +131,7 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
+  flex-shrink: 0;
 }
 
 .nav-right a {
@@ -89,6 +140,8 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+
+.nav-right a:hover { color: #fff; }
 
 .btn-sell {
   background: #C9A84C;
@@ -99,6 +152,19 @@ body {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* hamburger — hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
 }
 
 /* ── HERO ── */
@@ -153,7 +219,7 @@ body {
   max-width: 400px;
 }
 
-.hero-btns { display: flex; gap: 14px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .btn-primary {
   background: #C9A84C;
@@ -164,6 +230,8 @@ body {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-ghost {
@@ -175,6 +243,8 @@ body {
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* ── HERO RIGHT ── */
@@ -230,7 +300,8 @@ body {
 .stats-inner {
   display: flex;
   justify-content: center;
-  gap: 64px;
+  gap: 48px;
+  flex-wrap: wrap;
 }
 
 .stat { text-align: center; }
@@ -260,7 +331,12 @@ body {
   display: flex;
   gap: 10px;
   overflow-x: auto;
+  padding-bottom: 4px;
+  /* hide scrollbar visually but keep it functional */
+  scrollbar-width: none;
 }
+
+.cats-inner::-webkit-scrollbar { display: none; }
 
 .cat {
   padding: 8px 20px;
@@ -272,6 +348,7 @@ body {
   cursor: pointer;
   color: #555;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .cat.active {
@@ -316,11 +393,16 @@ body {
   border-radius: 12px;
   overflow: hidden;
   border: 0.5px solid #e0dbd2;
-  cursor: pointer;
   transition: transform 0.15s;
 }
 
 .card:hover { transform: translateY(-4px); }
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 .card img {
   width: 100%;
@@ -338,8 +420,24 @@ body {
   margin-bottom: 4px;
 }
 
-.card-name { font-size: 15px; font-weight: 600; }
-.card-heart { color: #ccc; font-size: 18px; }
+.card-name { font-size: 15px; font-weight: 600; color: #1C2B1E; }
+
+/* heart button — proper accessible button not just an icon */
+.heart-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.heart-btn:hover { color: #e05a5a; }
+.heart-btn[aria-pressed="true"] { color: #e05a5a; }
+
 .card-seller { font-size: 13px; color: #999; margin-bottom: 10px; }
 
 .card-bottom {
@@ -382,7 +480,7 @@ body {
 
 .trust-item:last-child { border-right: none; }
 
-.trust-icon { font-size: 26px; color: #C9A84C; margin-top: 2px; }
+.trust-icon { font-size: 26px; color: #C9A84C; margin-top: 2px; flex-shrink: 0; }
 .trust-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
 .trust-desc { font-size: 13px; color: #7a9c7d; line-height: 1.6; }
 
@@ -396,12 +494,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .footer-logo { font-size: 16px; font-weight: 700; color: #fff; }
 .footer-logo span { color: #C9A84C; }
 
-.footer-links { display: flex; gap: 24px; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 
 .footer-links a {
   font-size: 13px;
@@ -409,4 +509,161 @@ body {
   text-decoration: none;
 }
 
+.footer-links a:hover { color: #fff; }
+
 .footer-copy { font-size: 12px; color: #4a6b4d; }
+
+/* ────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+   ──────────────────────────────────────── */
+
+/* TABLET — 900px and below */
+@media (max-width: 900px) {
+
+  .container { padding: 0 20px; }
+
+  /* hero stacks vertically */
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left {
+    padding: 40px 24px;
+  }
+
+  .hero-left h1 { font-size: 32px; }
+
+  /* hide the decorative image grid on tablet */
+  .hero-right { display: none; }
+
+  /* product grid becomes 2 columns */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* trust bar stacks */
+  .trust-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item {
+    border-right: none;
+    border-bottom: 0.5px solid #2a3d2c;
+  }
+
+  .trust-item:last-child { border-bottom: none; }
+
+  /* stats wrap */
+  .stats-inner { gap: 28px; }
+
+  /* footer stacks */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links { justify-content: center; }
+}
+
+/* MOBILE — 600px and below */
+@media (max-width: 600px) {
+
+  .container { padding: 0 16px; }
+
+  /* show hamburger, hide nav links */
+  .nav-toggle { display: block; }
+
+  .nav-center { display: none; }
+
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #1C2B1E;
+    padding: 16px 20px;
+    border-top: 0.5px solid #2a3d2c;
+    z-index: 99;
+  }
+
+  /* when menu is open */
+  .nav-right.open {
+    display: flex;
+  }
+
+  .nav-right a {
+    padding: 14px 0;
+    font-size: 16px;
+    width: 100%;
+    border-bottom: 0.5px solid #2a3d2c;
+  }
+
+  .btn-sell {
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  /* hero */
+  .hero-left { padding: 36px 20px; }
+  .hero-left h1 { font-size: 28px; }
+  .hero-left p { font-size: 14px; }
+
+  /* product grid: single column on small phones */
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .card img { height: 160px; }
+  .card-body { padding: 10px 12px; }
+  .card-name { font-size: 13px; }
+  .card-price { font-size: 14px; }
+
+  /* categories */
+  .cats-inner { gap: 8px; }
+  .cat { padding: 7px 14px; font-size: 13px; }
+
+  /* stats */
+  .stats-inner { gap: 20px; }
+  .stat-num { font-size: 18px; }
+
+  /* trust */
+  .trust-item { padding: 20px; }
+
+  /* section spacing */
+  .section { padding: 28px 0; }
+  .trust-wrapper { padding: 0 0 28px; }
+}
+
+/* VERY SMALL — 380px and below */
+@media (max-width: 380px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .hero-left h1 { font-size: 24px; }
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-ghost { text-align: center; }
+}
+
+/* ── REDUCED MOTION ── */
+/* respects user's OS setting to reduce animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ── HIGH CONTRAST MODE ── */
+@media (forced-colors: active) {
+  .cat.active,
+  .btn-sell,
+  .btn-primary {
+    forced-color-adjust: none;
+  }
+}

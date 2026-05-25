@@ -3,228 +3,283 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thriftorium</title>
+    <title>Thriftorium — Buy & Sell Preloved Fashion in South Africa</title>
+    <meta name="description" content="South Africa's sustainable fashion marketplace. Buy and sell preloved clothing safely with escrow protection." />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   </head>
   <body>
 
+    <!-- SKIP LINK: lets screen reader & keyboard users jump straight to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- NAVBAR -->
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
       <div class="container nav-inner">
-        <div class="logo">
-          <div class="logo-mark">T</div>
+
+        <a href="/" class="logo" aria-label="Thriftorium home">
+          <div class="logo-mark" aria-hidden="true">T</div>
           <div class="logo-text">Thrift<span>orium</span></div>
-        </div>
-        <div class="nav-center">
+        </a>
+
+        <div class="nav-center" role="search">
+          <label for="site-search" class="sr-only">Search listings, sellers, brands</label>
           <i class="ti ti-search" aria-hidden="true"></i>
-          <input type="text" placeholder="Search listings, sellers, brands..." />
+          <input
+            type="search"
+            id="site-search"
+            placeholder="Search listings, sellers, brands..."
+            autocomplete="off"
+          />
         </div>
-        <div class="nav-right">
-          <a href="#">Browse</a>
-          <a href="#">How it works</a>
-          <a href="#">Login</a>
-          <button class="btn-sell">+ Sell now</button>
+
+        <!-- hamburger for mobile -->
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <i class="ti ti-menu-2" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav-right" id="nav-menu" role="menubar">
+          <a href="#" role="menuitem">Browse</a>
+          <a href="#" role="menuitem">How it works</a>
+          <a href="#" role="menuitem">Login</a>
+          <a href="#" class="btn-sell" role="menuitem">+ Sell now</a>
         </div>
+
       </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="hero-tag">
-          <i class="ti ti-leaf" aria-hidden="true"></i>
-          South Africa's sustainable marketplace
-        </div>
-        <h1>Your style.<br/><em>Someone's treasure.</em></h1>
-        <p>Buy and sell preloved fashion safely across South Africa. Every purchase protected by escrow — you only pay when you're happy.</p>
-        <div class="hero-btns">
-          <button class="btn-primary">Browse listings</button>
-          <button class="btn-ghost">Start selling</button>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="mini-card">
-          <img src="https://picsum.photos/seed/jacket2/300/200" alt="Jacket" />
-          <div class="mini-badge">New</div>
-          <div class="mini-info">
-            <div class="mini-title">Oversized Jacket</div>
-            <div class="mini-price">R320</div>
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-left">
+          <div class="hero-tag" aria-hidden="true">
+            <i class="ti ti-leaf"></i>
+            South Africa's sustainable marketplace
+          </div>
+          <h1 id="hero-heading">Your style.<br/><em>Someone's treasure.</em></h1>
+          <p>Buy and sell preloved fashion safely across South Africa. Every purchase protected by escrow — you only pay when you're happy.</p>
+          <div class="hero-btns">
+            <a href="#listings" class="btn-primary">Browse listings</a>
+            <a href="#" class="btn-ghost">Start selling</a>
           </div>
         </div>
-        <div class="mini-card">
-          <img src="https://picsum.photos/seed/dress2/300/200" alt="Dress" />
-          <div class="mini-info">
-            <div class="mini-title">Vintage Dress</div>
-            <div class="mini-price">R150</div>
-          </div>
-        </div>
-        <div class="mini-card">
-          <img src="https://picsum.photos/seed/shoes2/300/200" alt="Shoes" />
-          <div class="mini-info">
-            <div class="mini-title">Chunky Boots</div>
-            <div class="mini-price">R280</div>
-          </div>
-        </div>
-        <div class="mini-card">
-          <img src="https://picsum.photos/seed/bag2/300/200" alt="Bag" />
-          <div class="mini-badge">Hot</div>
-          <div class="mini-info">
-            <div class="mini-title">Leather Tote</div>
-            <div class="mini-price">R420</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS BAR -->
-    <div class="stats-bar">
-      <div class="container stats-inner">
-        <div class="stat">
-          <div class="stat-num">12,400+</div>
-          <div class="stat-label">Active listings</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">4,800+</div>
-          <div class="stat-label">Verified sellers</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">R2.1M+</div>
-          <div class="stat-label">Paid out to sellers</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Secure payments</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CATEGORIES -->
-    <div class="cats">
-      <div class="container cats-inner">
-        <button class="cat active">All</button>
-        <button class="cat">Tops</button>
-        <button class="cat">Dresses</button>
-        <button class="cat">Shoes</button>
-        <button class="cat">Jackets</button>
-        <button class="cat">Accessories</button>
-        <button class="cat">Bags</button>
-        <button class="cat">Vintage</button>
-      </div>
-    </div>
-
-    <!-- LISTINGS -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Recent listings</h2>
-          <a href="#">View all →</a>
-        </div>
-        <div class="product-grid">
-
-          <div class="card" data-category="jackets">
-            <img src="https://picsum.photos/seed/jacket/400/300" alt="Denim Jacket" />
-            <div class="card-body">
-              <div class="card-top">
-                <span class="card-name">Denim Jacket</span>
-                <i class="ti ti-heart card-heart" aria-hidden="true"></i>
-              </div>
-              <div class="card-seller">@nomsa_thrifts · Joburg</div>
-              <div class="card-bottom">
-                <span class="card-price">R250</span>
-                <span class="cond-badge cond-good">Good</span>
-              </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="mini-card">
+            <img src="https://picsum.photos/seed/jacket2/300/200" alt="" />
+            <div class="mini-badge">New</div>
+            <div class="mini-info">
+              <div class="mini-title">Oversized Jacket</div>
+              <div class="mini-price">R320</div>
             </div>
           </div>
-
-          <div class="card" data-category="shoes">
-            <img src="https://picsum.photos/seed/sneakers/400/300" alt="White Sneakers" />
-            <div class="card-body">
-              <div class="card-top">
-                <span class="card-name">White Sneakers</span>
-                <i class="ti ti-heart card-heart" aria-hidden="true"></i>
-              </div>
-              <div class="card-seller">@kicks_za · Cape Town</div>
-              <div class="card-bottom">
-                <span class="card-price">R180</span>
-                <span class="cond-badge cond-new">Like new</span>
-              </div>
+          <div class="mini-card">
+            <img src="https://picsum.photos/seed/dress2/300/200" alt="" />
+            <div class="mini-info">
+              <div class="mini-title">Vintage Dress</div>
+              <div class="mini-price">R150</div>
             </div>
           </div>
-
-          <div class="card" data-category="dresses">
-            <img src="https://picsum.photos/seed/dress/400/300" alt="Floral Dress" />
-            <div class="card-body">
-              <div class="card-top">
-                <span class="card-name">Floral Dress</span>
-                <i class="ti ti-heart card-heart" aria-hidden="true"></i>
-              </div>
-              <div class="card-seller">@zintle_closet · Durban</div>
-              <div class="card-bottom">
-                <span class="card-price">R120</span>
-                <span class="cond-badge cond-good">Good</span>
-              </div>
+          <div class="mini-card">
+            <img src="https://picsum.photos/seed/shoes2/300/200" alt="" />
+            <div class="mini-info">
+              <div class="mini-title">Chunky Boots</div>
+              <div class="mini-price">R280</div>
             </div>
           </div>
-
-          <div class="card" data-category="accessories">
-            <img src="https://picsum.photos/seed/belt/400/300" alt="Leather Belt" />
-            <div class="card-body">
-              <div class="card-top">
-                <span class="card-name">Leather Belt</span>
-                <i class="ti ti-heart card-heart" aria-hidden="true"></i>
-              </div>
-              <div class="card-seller">@style_swap · Pretoria</div>
-              <div class="card-bottom">
-                <span class="card-price">R80</span>
-                <span class="cond-badge cond-fair">Fair</span>
-              </div>
+          <div class="mini-card">
+            <img src="https://picsum.photos/seed/bag2/300/200" alt="" />
+            <div class="mini-badge">Hot</div>
+            <div class="mini-info">
+              <div class="mini-title">Leather Tote</div>
+              <div class="mini-price">R420</div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- TRUST BAR -->
-    <div class="trust-wrapper">
-      <div class="container">
-        <div class="trust-bar">
-          <div class="trust-item">
-            <i class="ti ti-shield-check trust-icon" aria-hidden="true"></i>
-            <div>
-              <div class="trust-title">Escrow protection</div>
-              <div class="trust-desc">Your money is held safely until you confirm you're happy with your item.</div>
-            </div>
+      <!-- STATS BAR -->
+      <div class="stats-bar" role="region" aria-label="Marketplace statistics">
+        <div class="container stats-inner">
+          <div class="stat">
+            <div class="stat-num" aria-label="12,400 plus active listings">12,400+</div>
+            <div class="stat-label" aria-hidden="true">Active listings</div>
           </div>
-          <div class="trust-item">
-            <i class="ti ti-truck-delivery trust-icon" aria-hidden="true"></i>
-            <div>
-              <div class="trust-title">Nationwide delivery</div>
-              <div class="trust-desc">Integrated with The Courier Guy, PAXI, Pargo and more — ship anywhere in SA.</div>
-            </div>
+          <div class="stat">
+            <div class="stat-num" aria-label="4,800 plus verified sellers">4,800+</div>
+            <div class="stat-label" aria-hidden="true">Verified sellers</div>
           </div>
-          <div class="trust-item">
-            <i class="ti ti-currency-dollar trust-icon" aria-hidden="true"></i>
-            <div>
-              <div class="trust-title">Sellers keep 100%</div>
-              <div class="trust-desc">List for free and receive your full asking price, straight to your Thriftorium wallet.</div>
-            </div>
+          <div class="stat">
+            <div class="stat-num" aria-label="Over 2.1 million rand paid out to sellers">R2.1M+</div>
+            <div class="stat-label" aria-hidden="true">Paid out to sellers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" aria-label="100 percent secure payments">100%</div>
+            <div class="stat-label" aria-hidden="true">Secure payments</div>
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- CATEGORIES -->
+      <div class="cats" role="region" aria-label="Filter listings by category">
+        <div class="container cats-inner">
+          <button class="cat active" aria-pressed="true" data-filter="all">All</button>
+          <button class="cat" aria-pressed="false" data-filter="tops">Tops</button>
+          <button class="cat" aria-pressed="false" data-filter="dresses">Dresses</button>
+          <button class="cat" aria-pressed="false" data-filter="shoes">Shoes</button>
+          <button class="cat" aria-pressed="false" data-filter="jackets">Jackets</button>
+          <button class="cat" aria-pressed="false" data-filter="accessories">Accessories</button>
+          <button class="cat" aria-pressed="false" data-filter="bags">Bags</button>
+          <button class="cat" aria-pressed="false" data-filter="vintage">Vintage</button>
+        </div>
+      </div>
+
+      <!-- LISTINGS -->
+      <section class="section" id="listings" aria-labelledby="listings-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="listings-heading">Recent listings</h2>
+            <a href="#">View all →</a>
+          </div>
+
+          <!-- live region announces filter changes to screen readers -->
+          <p class="sr-only" aria-live="polite" id="filter-announcement"></p>
+
+          <div class="product-grid" role="list" aria-label="Product listings">
+
+            <article class="card" role="listitem" data-category="jackets">
+              <a href="#" class="card-link" aria-label="Denim Jacket, R250, Good condition, sold by nomsa thrifts in Johannesburg">
+                <img src="https://picsum.photos/seed/jacket/400/300" alt="Denim Jacket — front view, medium wash" />
+                <div class="card-body">
+                  <div class="card-top">
+                    <span class="card-name">Denim Jacket</span>
+                    <button class="heart-btn" aria-label="Save Denim Jacket to favourites" aria-pressed="false">
+                      <i class="ti ti-heart" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="card-seller">@nomsa_thrifts · Joburg</div>
+                  <div class="card-bottom">
+                    <span class="card-price">R250</span>
+                    <span class="cond-badge cond-good">Good</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="card" role="listitem" data-category="shoes">
+              <a href="#" class="card-link" aria-label="White Sneakers, R180, Like new condition, sold by kicks za in Cape Town">
+                <img src="https://picsum.photos/seed/sneakers/400/300" alt="White Sneakers — clean pair, size 9" />
+                <div class="card-body">
+                  <div class="card-top">
+                    <span class="card-name">White Sneakers</span>
+                    <button class="heart-btn" aria-label="Save White Sneakers to favourites" aria-pressed="false">
+                      <i class="ti ti-heart" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="card-seller">@kicks_za · Cape Town</div>
+                  <div class="card-bottom">
+                    <span class="card-price">R180</span>
+                    <span class="cond-badge cond-new">Like new</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="card" role="listitem" data-category="dresses">
+              <a href="#" class="card-link" aria-label="Floral Dress, R120, Good condition, sold by zintle closet in Durban">
+                <img src="https://picsum.photos/seed/dress/400/300" alt="Floral Dress — colourful summer dress" />
+                <div class="card-body">
+                  <div class="card-top">
+                    <span class="card-name">Floral Dress</span>
+                    <button class="heart-btn" aria-label="Save Floral Dress to favourites" aria-pressed="false">
+                      <i class="ti ti-heart" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="card-seller">@zintle_closet · Durban</div>
+                  <div class="card-bottom">
+                    <span class="card-price">R120</span>
+                    <span class="cond-badge cond-good">Good</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="card" role="listitem" data-category="accessories">
+              <a href="#" class="card-link" aria-label="Leather Belt, R80, Fair condition, sold by style swap in Pretoria">
+                <img src="https://picsum.photos/seed/belt/400/300" alt="Leather Belt — brown, size medium" />
+                <div class="card-body">
+                  <div class="card-top">
+                    <span class="card-name">Leather Belt</span>
+                    <button class="heart-btn" aria-label="Save Leather Belt to favourites" aria-pressed="false">
+                      <i class="ti ti-heart" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="card-seller">@style_swap · Pretoria</div>
+                  <div class="card-bottom">
+                    <span class="card-price">R80</span>
+                    <span class="cond-badge cond-fair">Fair</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST BAR -->
+      <div class="trust-wrapper" role="region" aria-label="Why shop on Thriftorium">
+        <div class="container">
+          <div class="trust-bar">
+
+            <div class="trust-item">
+              <i class="ti ti-shield-check trust-icon" aria-hidden="true"></i>
+              <div>
+                <div class="trust-title">Escrow protection</div>
+                <div class="trust-desc">Your money is held safely until you confirm you're happy with your item.</div>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <i class="ti ti-truck-delivery trust-icon" aria-hidden="true"></i>
+              <div>
+                <div class="trust-title">Nationwide delivery</div>
+                <div class="trust-desc">Integrated with The Courier Guy, PAXI, Pargo and more — ship anywhere in SA.</div>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <i class="ti ti-currency-dollar trust-icon" aria-hidden="true"></i>
+              <div>
+                <div class="trust-title">Sellers keep 100%</div>
+                <div class="trust-desc">List for free and receive your full asking price, straight to your Thriftorium wallet.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="container footer-inner">
-        <div class="footer-logo">Thrift<span>orium</span></div>
-        <div class="footer-links">
-          <a href="#">About</a>
-          <a href="#">How it works</a>
-          <a href="#">Safety</a>
-          <a href="#">Contact</a>
-        </div>
+        <div class="footer-logo" aria-label="Thriftorium">Thrift<span>orium</span></div>
+        <nav aria-label="Footer navigation">
+          <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">How it works</a>
+            <a href="#">Safety</a>
+            <a href="#">Contact</a>
+          </div>
+        </nav>
         <div class="footer-copy">© 2025 Thriftorium</div>
       </div>
     </footer>
