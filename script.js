@@ -20,6 +20,18 @@ if (navToggle && mobileMenu) {
   });
 }
 
+// ── MOBILE CATEGORIES ACCORDION ──
+const accordion = document.querySelector('.mobile-menu-accordion');
+const mobileCats = document.getElementById('mobile-cats');
+
+if (accordion && mobileCats) {
+  accordion.addEventListener('click', function () {
+    const isOpen = mobileCats.classList.toggle('open');
+    accordion.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    mobileCats.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  });
+}
+
 // ── HEADER CATEGORY TABS ──
 document.querySelectorAll('.header-cat').forEach(function (cat) {
   cat.addEventListener('click', function () {
