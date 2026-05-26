@@ -1,61 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thriftorium — Buy & Sell Preloved Fashion in South Africa</title>
-    <meta name="description" content="South Africa's sustainable fashion marketplace. Buy and sell preloved clothing safely with escrow protection." />
+    <meta
+      name="description"
+      content="South Africa's sustainable fashion marketplace. Buy and sell preloved clothing safely with escrow protection."
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
   </head>
   <body>
-
-    <!-- SKIP LINK: lets screen reader & keyboard users jump straight to content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- NAVBAR -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-      <div class="container nav-inner">
+    <!-- ══ STICKY HEADER ══ -->
+    <header class="site-header">
+      <!-- ROW 1: Logo + Nav -->
+      <div class="header-row-1">
+        <div class="container header-row-1-inner">
+          <a href="/" class="logo" aria-label="Thriftorium home">
+            <div class="logo-mark" aria-hidden="true">T</div>
+            <div class="logo-text">Thrift<span>orium</span></div>
+          </a>
 
-        <a href="/" class="logo" aria-label="Thriftorium home">
-          <div class="logo-mark" aria-hidden="true">T</div>
-          <div class="logo-text">Thrift<span>orium</span></div>
-        </a>
+          <nav class="nav-links" aria-label="Main navigation">
+            <a href="#">Discover</a>
+            <a href="#">Shops</a>
+            <a href="#">Favourites</a>
+            <a href="#" class="nav-messages">
+              <i class="ti ti-message" aria-hidden="true"></i>
+              Messages
+            </a>
+          </nav>
 
-        <div class="nav-center" role="search">
-          <label for="site-search" class="sr-only">Search listings, sellers, brands</label>
-          <i class="ti ti-search" aria-hidden="true"></i>
-          <input
-            type="search"
-            id="site-search"
-            placeholder="Search listings, sellers, brands..."
-            autocomplete="off"
-          />
+          <div class="nav-actions">
+            <a href="#" class="btn-login">Login</a>
+            <a href="#" class="btn-sell">+ Sell now</a>
+          </div>
+
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <i class="ti ti-menu-2" aria-hidden="true"></i>
+          </button>
         </div>
-
-        <!-- hamburger for mobile -->
-        <button
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-          aria-label="Open navigation menu"
-        >
-          <i class="ti ti-menu-2" aria-hidden="true"></i>
-        </button>
-
-        <div class="nav-right" id="nav-menu" role="menubar">
-          <a href="#" role="menuitem">Browse</a>
-          <a href="#" role="menuitem">How it works</a>
-          <a href="#" role="menuitem">Login</a>
-          <a href="#" class="btn-sell" role="menuitem">+ Sell now</a>
-        </div>
-
       </div>
-    </nav>
 
-    <!-- MAIN CONTENT -->
+      <!-- ROW 2: Search -->
+      <div class="header-row-2">
+        <div class="container">
+          <div class="header-search" role="search">
+            <label for="site-search" class="sr-only"
+              >Search listings, sellers, brands</label
+            >
+            <i class="ti ti-search" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="site-search"
+              placeholder="Search items and shops..."
+              autocomplete="off"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 3: Category tabs -->
+      <div
+        class="header-row-3"
+        role="navigation"
+        aria-label="Browse by category"
+      >
+        <div class="container header-row-3-inner">
+          <a href="#" class="header-cat active">Women</a>
+          <a href="#" class="header-cat">Men</a>
+          <a href="#" class="header-cat">Kids</a>
+          <a href="#" class="header-cat">Beauty</a>
+          <a href="#" class="header-cat">Home</a>
+          <a href="#" class="header-cat">Sports</a>
+          <a href="#" class="header-cat">Vintage</a>
+          <a href="#" class="header-cat">Luxury</a>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <a href="#">Discover</a>
+        <a href="#">My shop</a>
+        <a href="#">My purchases</a>
+        <a href="#">My wallet</a>
+        <a href="#" class="nav-messages">
+          <i class="ti ti-message" aria-hidden="true"></i>
+          Messages
+        </a>
+        <a href="#">How it works</a>
+        <a href="#">Settings</a>
+        <a href="#" class="btn-sell mobile-sell">+ Start selling for free</a>
+      </div>
+    </header>
+
+    <!-- ══ MAIN ══ -->
     <main id="main-content">
-
       <!-- HERO -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-left">
@@ -63,109 +114,443 @@
             <i class="ti ti-leaf"></i>
             South Africa's sustainable marketplace
           </div>
-          <h1 id="hero-heading">Your style.<br/><em>Someone's treasure.</em></h1>
-          <p>Buy and sell preloved fashion safely across South Africa. Every purchase protected by escrow — you only pay when you're happy.</p>
+          <h1 id="hero-heading">
+            Your style.<br /><em>Someone's treasure.</em>
+          </h1>
+          <p>
+            Buy and sell preloved fashion safely across South Africa. Every
+            purchase protected by escrow — you only pay when you're happy.
+          </p>
           <div class="hero-btns">
             <a href="#listings" class="btn-primary">Browse listings</a>
             <a href="#" class="btn-ghost">Start selling</a>
           </div>
         </div>
         <div class="hero-right" aria-hidden="true">
-          <div class="mini-card">
-            <img src="https://picsum.photos/seed/jacket2/300/200" alt="" />
-            <div class="mini-badge">New</div>
-            <div class="mini-info">
-              <div class="mini-title">Oversized Jacket</div>
-              <div class="mini-price">R320</div>
-            </div>
-          </div>
-          <div class="mini-card">
-            <img src="https://picsum.photos/seed/dress2/300/200" alt="" />
-            <div class="mini-info">
-              <div class="mini-title">Vintage Dress</div>
-              <div class="mini-price">R150</div>
-            </div>
-          </div>
-          <div class="mini-card">
-            <img src="https://picsum.photos/seed/shoes2/300/200" alt="" />
-            <div class="mini-info">
-              <div class="mini-title">Chunky Boots</div>
-              <div class="mini-price">R280</div>
-            </div>
-          </div>
-          <div class="mini-card">
-            <img src="https://picsum.photos/seed/bag2/300/200" alt="" />
-            <div class="mini-badge">Hot</div>
-            <div class="mini-info">
-              <div class="mini-title">Leather Tote</div>
-              <div class="mini-price">R420</div>
+          <div class="stats-bar">
+            <div class="stats-inner">
+              <div class="stat">
+                <div class="stat-num">12,400+</div>
+                <div class="stat-label">Active listings</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">4,800+</div>
+                <div class="stat-label">Verified sellers</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">R2.1M+</div>
+                <div class="stat-label">Paid out to sellers</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Secure payments</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- STATS BAR -->
-      <div class="stats-bar" role="region" aria-label="Marketplace statistics">
-        <div class="container stats-inner">
-          <div class="stat">
-            <div class="stat-num" aria-label="12,400 plus active listings">12,400+</div>
-            <div class="stat-label" aria-hidden="true">Active listings</div>
+      <!-- BRANDS -->
+      <section class="brands-section" aria-labelledby="brands-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="brands-heading">
+              <i class="ti ti-tag" aria-hidden="true"></i>
+              Shop by brand
+            </h2>
+            <a href="#" class="see-more">See more</a>
           </div>
-          <div class="stat">
-            <div class="stat-num" aria-label="4,800 plus verified sellers">4,800+</div>
-            <div class="stat-label" aria-hidden="true">Verified sellers</div>
+          <div class="brands-grid">
+            <a href="#" class="brand-pill">Nike</a>
+            <a href="#" class="brand-pill">Adidas</a>
+            <a href="#" class="brand-pill">Zara</a>
+            <a href="#" class="brand-pill">H&M</a>
+            <a href="#" class="brand-pill">Cotton On</a>
+            <a href="#" class="brand-pill">Woolworths</a>
+            <a href="#" class="brand-pill">Old Khaki</a>
+            <a href="#" class="brand-pill">Levi's</a>
+            <a href="#" class="brand-pill">Converse</a>
+            <a href="#" class="brand-pill">Foschini</a>
           </div>
-          <div class="stat">
-            <div class="stat-num" aria-label="Over 2.1 million rand paid out to sellers">R2.1M+</div>
-            <div class="stat-label" aria-hidden="true">Paid out to sellers</div>
+        </div>
+      </section>
+
+      <!-- EDITOR'S PICKS -->
+      <section class="editors-picks" aria-labelledby="picks-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="picks-heading">
+              <i class="ti ti-star" aria-hidden="true"></i>
+              Editor's picks
+            </h2>
+            <a href="#" class="see-more">See more</a>
           </div>
-          <div class="stat">
-            <div class="stat-num" aria-label="100 percent secure payments">100%</div>
-            <div class="stat-label" aria-hidden="true">Secure payments</div>
+          <div class="picks-scroll" role="list">
+            <article class="pick-card" role="listitem">
+              <a href="#" aria-label="Summer Vibes edit">
+                <img
+                  src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80"
+                  alt="Summer fashion edit"
+                  loading="lazy"
+                />
+                <div class="pick-info">
+                  <p class="pick-title">Summer Vibes</p>
+                  <p class="pick-count">124 items</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="pick-card" role="listitem">
+              <a href="#" aria-label="Street Style edit">
+                <img
+                  src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80"
+                  alt="Street style edit"
+                  loading="lazy"
+                />
+                <div class="pick-info">
+                  <p class="pick-title">Street Style</p>
+                  <p class="pick-count">89 items</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="pick-card" role="listitem">
+              <a href="#" aria-label="Vintage Finds edit">
+                <img
+                  src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80"
+                  alt="Vintage finds edit"
+                  loading="lazy"
+                />
+                <div class="pick-info">
+                  <p class="pick-title">Vintage Finds</p>
+                  <p class="pick-count">67 items</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="pick-card" role="listitem">
+              <a href="#" aria-label="Work Wear edit">
+                <img
+                  src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=80"
+                  alt="Work wear edit"
+                  loading="lazy"
+                />
+                <div class="pick-info">
+                  <p class="pick-title">Work Wear</p>
+                  <p class="pick-count">201 items</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="pick-card" role="listitem">
+              <a href="#" aria-label="Sneaker Culture edit">
+                <img
+                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80"
+                  alt="Sneaker culture edit"
+                  loading="lazy"
+                />
+                <div class="pick-info">
+                  <p class="pick-title">Sneaker Culture</p>
+                  <p class="pick-count">156 items</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="pick-card" role="listitem">
+              <a href="#" aria-label="Boho Chic edit">
+                <img
+                  src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80"
+                  alt="Boho chic edit"
+                  loading="lazy"
+                />
+                <div class="pick-info">
+                  <p class="pick-title">Boho Chic</p>
+                  <p class="pick-count">93 items</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST STRIP -->
+      <div
+        class="trust-strip"
+        role="region"
+        aria-label="Payment and delivery partners"
+      >
+        <div class="container trust-strip-inner">
+          <div class="trust-strip-item">
+            <i class="ti ti-shield-check" aria-hidden="true"></i>
+            <div>
+              <strong>Safe selling &amp; buying</strong>
+              <a href="#">How it works →</a>
+            </div>
+          </div>
+          <div class="trust-strip-divider" aria-hidden="true"></div>
+          <div class="trust-strip-item">
+            <strong>Secure payments by</strong>
+            <div class="trust-strip-logos">
+              <span>Ozow</span>
+              <span>Visa</span>
+              <span>Mastercard</span>
+              <span>EFT</span>
+            </div>
+          </div>
+          <div class="trust-strip-divider" aria-hidden="true"></div>
+          <div class="trust-strip-item">
+            <strong>Fast delivery by</strong>
+            <div class="trust-strip-logos">
+              <span>PAXI</span>
+              <span>Courier Guy</span>
+              <span>Pargo</span>
+              <span>PostNet</span>
+              <span>Aramex</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- CATEGORIES -->
-      <div class="cats" role="region" aria-label="Filter listings by category">
-        <div class="container cats-inner">
-          <button class="cat active" aria-pressed="true" data-filter="all">All</button>
-          <button class="cat" aria-pressed="false" data-filter="tops">Tops</button>
-          <button class="cat" aria-pressed="false" data-filter="dresses">Dresses</button>
-          <button class="cat" aria-pressed="false" data-filter="shoes">Shoes</button>
-          <button class="cat" aria-pressed="false" data-filter="jackets">Jackets</button>
-          <button class="cat" aria-pressed="false" data-filter="accessories">Accessories</button>
-          <button class="cat" aria-pressed="false" data-filter="bags">Bags</button>
-          <button class="cat" aria-pressed="false" data-filter="vintage">Vintage</button>
-        </div>
-      </div>
+      <!-- CATEGORY IMAGE GRID -->
+      <section class="cat-grid-section" aria-labelledby="cat-grid-heading">
+        <div class="container">
+          <h2 id="cat-grid-heading">Categories</h2>
+          <div class="cat-grid" role="list">
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Women"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Women</span>
+            </a>
 
-      <!-- LISTINGS -->
-      <section class="section" id="listings" aria-labelledby="listings-heading">
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Men"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Men</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Kids"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Kids</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Beauty"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Beauty</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Home"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Home</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Sports"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Sports</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Vintage"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Vintage</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Luxury"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Luxury</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Technology"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Technology</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Books"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Books</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Pets"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">For Pets</span>
+            </a>
+
+            <a
+              href="#"
+              class="cat-card"
+              role="listitem"
+              aria-label="Browse Other"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <div class="cat-card-overlay"></div>
+              <span class="cat-card-label">Other</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECENT LISTINGS -->
+      <section
+        class="listings"
+        id="listings"
+        aria-labelledby="listings-heading"
+      >
         <div class="container">
           <div class="section-head">
             <h2 id="listings-heading">Recent listings</h2>
-            <a href="#">View all →</a>
+            <a href="#" class="see-more">View all →</a>
           </div>
 
-          <!-- live region announces filter changes to screen readers -->
           <p class="sr-only" aria-live="polite" id="filter-announcement"></p>
 
           <div class="product-grid" role="list" aria-label="Product listings">
-
             <article class="card" role="listitem" data-category="jackets">
-              <a href="#" class="card-link" aria-label="Denim Jacket, R250, Good condition, sold by nomsa thrifts in Johannesburg">
-                <img src="https://picsum.photos/seed/jacket/400/300" alt="Denim Jacket — front view, medium wash" />
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Denim Jacket, R250, Good condition, by nomsa thrifts in Johannesburg"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80"
+                    alt="Denim Jacket, medium wash"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Denim Jacket"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
                 <div class="card-body">
-                  <div class="card-top">
-                    <span class="card-name">Denim Jacket</span>
-                    <button class="heart-btn" aria-label="Save Denim Jacket to favourites" aria-pressed="false">
-                      <i class="ti ti-heart" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="card-seller">@nomsa_thrifts · Joburg</div>
-                  <div class="card-bottom">
-                    <span class="card-price">R250</span>
+                  <p class="card-name">Denim Jacket</p>
+                  <p class="card-seller">@nomsa_thrifts · Joburg</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R250</strong>
                     <span class="cond-badge cond-good">Good</span>
                   </div>
                 </div>
@@ -173,18 +558,30 @@
             </article>
 
             <article class="card" role="listitem" data-category="shoes">
-              <a href="#" class="card-link" aria-label="White Sneakers, R180, Like new condition, sold by kicks za in Cape Town">
-                <img src="https://picsum.photos/seed/sneakers/400/300" alt="White Sneakers — clean pair, size 9" />
+              <a
+                href="#"
+                class="card-link"
+                aria-label="White Sneakers, R180, Like new, by kicks za in Cape Town"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80"
+                    alt="White Nike Sneakers"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save White Sneakers"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
                 <div class="card-body">
-                  <div class="card-top">
-                    <span class="card-name">White Sneakers</span>
-                    <button class="heart-btn" aria-label="Save White Sneakers to favourites" aria-pressed="false">
-                      <i class="ti ti-heart" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="card-seller">@kicks_za · Cape Town</div>
-                  <div class="card-bottom">
-                    <span class="card-price">R180</span>
+                  <p class="card-name">White Sneakers</p>
+                  <p class="card-seller">@kicks_za · Cape Town</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R180</strong>
                     <span class="cond-badge cond-new">Like new</span>
                   </div>
                 </div>
@@ -192,18 +589,30 @@
             </article>
 
             <article class="card" role="listitem" data-category="dresses">
-              <a href="#" class="card-link" aria-label="Floral Dress, R120, Good condition, sold by zintle closet in Durban">
-                <img src="https://picsum.photos/seed/dress/400/300" alt="Floral Dress — colourful summer dress" />
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Floral Dress, R120, Good condition, by zintle closet in Durban"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80"
+                    alt="Floral summer dress"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Floral Dress"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
                 <div class="card-body">
-                  <div class="card-top">
-                    <span class="card-name">Floral Dress</span>
-                    <button class="heart-btn" aria-label="Save Floral Dress to favourites" aria-pressed="false">
-                      <i class="ti ti-heart" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="card-seller">@zintle_closet · Durban</div>
-                  <div class="card-bottom">
-                    <span class="card-price">R120</span>
+                  <p class="card-name">Floral Dress</p>
+                  <p class="card-seller">@zintle_closet · Durban</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R120</strong>
                     <span class="cond-badge cond-good">Good</span>
                   </div>
                 </div>
@@ -211,76 +620,211 @@
             </article>
 
             <article class="card" role="listitem" data-category="accessories">
-              <a href="#" class="card-link" aria-label="Leather Belt, R80, Fair condition, sold by style swap in Pretoria">
-                <img src="https://picsum.photos/seed/belt/400/300" alt="Leather Belt — brown, size medium" />
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Leather Belt, R80, Fair condition, by style swap in Pretoria"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80"
+                    alt="Brown leather bag"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Leather Belt"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
                 <div class="card-body">
-                  <div class="card-top">
-                    <span class="card-name">Leather Belt</span>
-                    <button class="heart-btn" aria-label="Save Leather Belt to favourites" aria-pressed="false">
-                      <i class="ti ti-heart" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="card-seller">@style_swap · Pretoria</div>
-                  <div class="card-bottom">
-                    <span class="card-price">R80</span>
+                  <p class="card-name">Leather Belt</p>
+                  <p class="card-seller">@style_swap · Pretoria</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R80</strong>
                     <span class="cond-badge cond-fair">Fair</span>
                   </div>
                 </div>
               </a>
             </article>
 
+            <article class="card" role="listitem" data-category="tops">
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Graphic Tee, R95, Like new, by thrift queen in Cape Town"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80"
+                    alt="White graphic tee"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Graphic Tee"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <p class="card-name">Graphic Tee</p>
+                  <p class="card-seller">@thrift_queen · Cape Town</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R95</strong>
+                    <span class="cond-badge cond-new">Like new</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="card" role="listitem" data-category="bags">
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Canvas Tote, R140, Good condition, by eco finds in Joburg"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80"
+                    alt="Canvas tote bag"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Canvas Tote"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <p class="card-name">Canvas Tote</p>
+                  <p class="card-seller">@eco_finds · Joburg</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R140</strong>
+                    <span class="cond-badge cond-good">Good</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="card" role="listitem" data-category="vintage">
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Vintage Blazer, R380, Good condition, by retro rack in Durban"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80"
+                    alt="Vintage navy blazer"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Vintage Blazer"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <p class="card-name">Vintage Blazer</p>
+                  <p class="card-seller">@retro_rack · Durban</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R380</strong>
+                    <span class="cond-badge cond-good">Good</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="card" role="listitem" data-category="shoes">
+              <a
+                href="#"
+                class="card-link"
+                aria-label="Ankle Boots, R320, Good condition, by sole sisters in Pretoria"
+              >
+                <div class="card-img-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80"
+                    alt="Black ankle boots"
+                    loading="lazy"
+                  />
+                  <button
+                    class="heart-btn"
+                    aria-label="Save Ankle Boots"
+                    aria-pressed="false"
+                  >
+                    <i class="ti ti-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <p class="card-name">Ankle Boots</p>
+                  <p class="card-seller">@sole_sisters · Pretoria</p>
+                  <div class="card-foot">
+                    <strong class="card-price">R320</strong>
+                    <span class="cond-badge cond-good">Good</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="load-more-wrap">
+            <button class="btn-load-more">Load more listings</button>
           </div>
         </div>
       </section>
-
-      <!-- TRUST BAR -->
-      <div class="trust-wrapper" role="region" aria-label="Why shop on Thriftorium">
-        <div class="container">
-          <div class="trust-bar">
-
-            <div class="trust-item">
-              <i class="ti ti-shield-check trust-icon" aria-hidden="true"></i>
-              <div>
-                <div class="trust-title">Escrow protection</div>
-                <div class="trust-desc">Your money is held safely until you confirm you're happy with your item.</div>
-              </div>
-            </div>
-
-            <div class="trust-item">
-              <i class="ti ti-truck-delivery trust-icon" aria-hidden="true"></i>
-              <div>
-                <div class="trust-title">Nationwide delivery</div>
-                <div class="trust-desc">Integrated with The Courier Guy, PAXI, Pargo and more — ship anywhere in SA.</div>
-              </div>
-            </div>
-
-            <div class="trust-item">
-              <i class="ti ti-currency-dollar trust-icon" aria-hidden="true"></i>
-              <div>
-                <div class="trust-title">Sellers keep 100%</div>
-                <div class="trust-desc">List for free and receive your full asking price, straight to your Thriftorium wallet.</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
     </main>
 
     <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
       <div class="container footer-inner">
-        <div class="footer-logo" aria-label="Thriftorium">Thrift<span>orium</span></div>
-        <nav aria-label="Footer navigation">
-          <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">How it works</a>
-            <a href="#">Safety</a>
-            <a href="#">Contact</a>
+        <div class="footer-brand">
+          <div class="footer-logo">Thrift<span>orium</span></div>
+          <p>South Africa's sustainable fashion marketplace.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"
+              ><i class="ti ti-brand-instagram"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="ti ti-brand-facebook"></i
+            ></a>
+            <a href="#" aria-label="TikTok"
+              ><i class="ti ti-brand-tiktok"></i
+            ></a>
           </div>
-        </nav>
-        <div class="footer-copy">© 2025 Thriftorium</div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About us</a>
+          <a href="#">How it works</a>
+          <a href="#">Safety</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help centre</a>
+          <a href="#">Contact us</a>
+          <a href="#">Buyer protection</a>
+          <a href="#">Seller guide</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of service</a>
+          <a href="#">Cookie policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2025 Thriftorium (Pty) Ltd · All rights reserved</p>
+        </div>
       </div>
     </footer>
 
